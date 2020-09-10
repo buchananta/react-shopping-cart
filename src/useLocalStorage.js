@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-export default function(initialData) {
-  let localcart = JSON.parse(localStorage.getItem('cart'));
-  localcart = localcart ? localcart : initialData;
-  const [cart, setCart] = useState(localcart); 
+export default function(localVar, initialData) {
+  let local = JSON.parse(localStorage.getItem(localVar));
+  local = local ? local : initialData;
+  const [cart, setCart] = useState(local); 
 
   function setLocalCart(newCart) {
-    localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem(localVar, JSON.stringify(newCart));
     setCart(newCart);
   }
 

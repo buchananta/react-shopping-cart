@@ -13,7 +13,7 @@ import { ItemContext } from './contexts/ItemContext';
 
 function App() {
 	const [products] = useState(data);
-	const [cart, setCart] = useLocalStorage([]);
+	const [cart, setCart] = useLocalStorage('cart', []);
 
 	const addItem = item => {
     // add the given item to the cart
